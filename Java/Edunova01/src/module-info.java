@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Josip
- *
- */
-module Edunova {
-}
