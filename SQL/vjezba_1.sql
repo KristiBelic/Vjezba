@@ -1,7 +1,6 @@
 
 
-# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Josip\Documents\EDUNOVA_JAVA_PROGRAMER\KRISTI\vjezba_1.sql
-
+# c:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Josip\Documents\EDUNOVA_JAVA_PROGRAMER\KRISTI\SQL\vjezba_1.sql
 
 drop database if exists vjezba_1;
 create database vjezba_1;
@@ -133,7 +132,7 @@ update cura set gustoca=15.77;
 
 delete from mladic where kuna>15.78;
 
-select * from zena; where kratkamajica like '%ana';
+select * from zena where kratkamajica like '%ana';
 
 select a.dukserica,f.asocijalno,e.hlace
 from svekar a 
@@ -142,11 +141,13 @@ inner join sestra c 		on c.sifra=b.sestra
 inner join zena d 			on d.sestra=c.sifra	
 inner join muskarac e 		on e.zena=d.sifra
 inner join mladic f 		on f.muskarac=e.sifra
-where d.hlace like'a%' and c.haljina like '%ba';
+where d.hlace like'a%' and c.haljina like '%ba'
+order by e.hlace desc;
 
-
-select * from muskarac;
-select hlace from muskarac order by hlace desc;
+select a.haljina, a.maraka
+from sestra a
+left join sestra_svekar b on a.sifra = b.sestra
+where b.sestra is null;
 
 
 
